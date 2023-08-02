@@ -12,4 +12,9 @@ node("sf1-1"){
       ./helloworld.o
     '''
   }
+  stage("Clean Workspace sf1-1"){
+    sh'''
+      cleanWs
+    '''
+  }
 }
