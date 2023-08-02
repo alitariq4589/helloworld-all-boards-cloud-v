@@ -1,6 +1,6 @@
 node("sf1-1"){
   stage("Clone repo sf1-1"){
-    checkout SCM
+    checkout scm
   }
   stage("Compile helloworld.c sf1-1"){
     sh'''#!/bin/bash
