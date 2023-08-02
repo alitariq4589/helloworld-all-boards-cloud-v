@@ -18,3 +18,129 @@ node("sf1-1"){
     '''
   }
 }
+
+node("sf1-2"){
+  stage("Clone repo sf1-2"){
+    checkout scm
+  }
+  stage("Compile helloworld.c sf1-2"){
+    sh'''#!/bin/bash
+      gcc ./helloworld.c -o helloworld.o
+    '''
+  }
+  stage("Run helloworld.o"){
+    sh'''#!/bin/bash
+      ./helloworld.o
+    '''
+  }
+  stage("Clean Workspace sf1-2"){
+    sh'''
+      rm -rf "${WORKSPACE}"/*
+    '''
+  }
+}
+
+node("sf1-3"){
+  stage("Clone repo sf1-3"){
+    checkout scm
+  }
+  stage("Compile helloworld.c sf1-3"){
+    sh'''#!/bin/bash
+      gcc ./helloworld.c -o helloworld.o
+    '''
+  }
+  stage("Run helloworld.o"){
+    sh'''#!/bin/bash
+      ./helloworld.o
+    '''
+  }
+  stage("Clean Workspace sf1-3"){
+    sh'''
+      rm -rf "${WORKSPACE}"/*
+    '''
+  }
+}
+
+node("sf1-4"){
+  stage("Clone repo sf1-4"){
+    checkout scm
+  }
+  stage("Compile helloworld.c sf1-4"){
+    sh'''#!/bin/bash
+      gcc ./helloworld.c -o helloworld.o
+    '''
+  }
+  stage("Run helloworld.o"){
+    sh'''#!/bin/bash
+      ./helloworld.o
+    '''
+  }
+  stage("Clean Workspace sf1-4"){
+    sh'''
+      rm -rf "${WORKSPACE}"/*
+    '''
+  }
+}
+
+node("sf1-5"){
+  stage("Clone repo sf1-5"){
+    checkout scm
+  }
+  stage("Compile helloworld.c sf1-5"){
+    sh'''#!/bin/bash
+      gcc ./helloworld.c -o helloworld.o
+    '''
+  }
+  stage("Run helloworld.o"){
+    sh'''#!/bin/bash
+      ./helloworld.o
+    '''
+  }
+  stage("Clean Workspace sf1-5"){
+    sh'''
+      rm -rf "${WORKSPACE}"/*
+    '''
+  }
+}
+
+node("unleashed1-1"){
+  stage("Clone repo unleashed1-1"){
+    checkout scm
+  }
+  stage("Compile helloworld.c unleashed1-1"){
+    sh'''#!/bin/bash
+      gcc ./helloworld.c -o helloworld.o
+    '''
+  }
+  stage("Run helloworld.o"){
+    sh'''#!/bin/bash
+      ./helloworld.o
+    '''
+  }
+  stage("Clean Workspace unleashed1-1"){
+    sh'''
+      rm -rf "${WORKSPACE}"/*
+    '''
+  }
+}
+
+node("unleashed1-2"){
+  stage("Clone repo unleashed1-2"){
+    checkout scm
+  }
+  stage("Compile helloworld.c unleashed1-2"){
+    sh'''#!/bin/bash
+      gcc ./helloworld.c -o helloworld.o
+    '''
+  }
+  stage("Run helloworld.o"){
+    sh'''#!/bin/bash
+      ./helloworld.o
+    '''
+  }
+  stage("Clean Workspace unleashed1-2"){
+    sh'''
+      rm -rf "${WORKSPACE}"/*
+    '''
+  }
+}
