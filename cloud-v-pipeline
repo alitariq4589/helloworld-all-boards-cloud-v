@@ -14,7 +14,7 @@ node("sf1-1"){
   }
   stage("Clean Workspace sf1-1"){
     sh'''
-      ${WORKSPACE}
+      echo ${WORKSPACE}
     '''
   }
 }
