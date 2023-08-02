@@ -1,0 +1,15 @@
+node("sf1-1"){
+  stage("Clone repo sf1-1"){
+    checkout SCM
+  }
+  stage("Compile helloworld.c sf1-1"){
+    sh'''#!/bin/bash
+      gcc ./helloworld.c -o helloworld.o
+    '''
+  }
+  stage("Run helloworld.o"){
+    sh'''#!/bin/bash
+      ./helloworld.o
+    '''
+  }
+}
