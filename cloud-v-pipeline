@@ -61,11 +61,11 @@ node("sf1-3"){
   }
 }
 
-node("sf1-4"){
-  stage("Clone repo sf1-4"){
+node("sf2-1"){
+  stage("Clone repo sf2-1"){
     checkout scm
   }
-  stage("Compile helloworld.c sf1-4"){
+  stage("Compile helloworld.c sf2-1"){
     sh'''#!/bin/bash
       gcc ./helloworld.c -o helloworld.o
     '''
@@ -75,18 +75,18 @@ node("sf1-4"){
       ./helloworld.o
     '''
   }
-  stage("Clean Workspace sf1-4"){
+  stage("Clean Workspace sf2-1"){
     sh'''
       rm -rf "${WORKSPACE}"/*
     '''
   }
 }
 
-node("sf1-5"){
-  stage("Clone repo sf1-5"){
+node("sf2-2"){
+  stage("Clone repo sf2-2"){
     checkout scm
   }
-  stage("Compile helloworld.c sf1-5"){
+  stage("Compile helloworld.c sf2-2"){
     sh'''#!/bin/bash
       gcc ./helloworld.c -o helloworld.o
     '''
@@ -96,7 +96,70 @@ node("sf1-5"){
       ./helloworld.o
     '''
   }
-  stage("Clean Workspace sf1-5"){
+  stage("Clean Workspace sf2-2"){
+    sh'''
+      rm -rf "${WORKSPACE}"/*
+    '''
+  }
+}
+
+node("sf2-3"){
+  stage("Clone repo sf2-3"){
+    checkout scm
+  }
+  stage("Compile helloworld.c sf2-3"){
+    sh'''#!/bin/bash
+      gcc ./helloworld.c -o helloworld.o
+    '''
+  }
+  stage("Run helloworld.o"){
+    sh'''#!/bin/bash
+      ./helloworld.o
+    '''
+  }
+  stage("Clean Workspace sf2-3"){
+    sh'''
+      rm -rf "${WORKSPACE}"/*
+    '''
+  }
+}
+
+node("sf2-4"){
+  stage("Clone repo sf2-4"){
+    checkout scm
+  }
+  stage("Compile helloworld.c sf2-4"){
+    sh'''#!/bin/bash
+      gcc ./helloworld.c -o helloworld.o
+    '''
+  }
+  stage("Run helloworld.o"){
+    sh'''#!/bin/bash
+      ./helloworld.o
+    '''
+  }
+  stage("Clean Workspace sf2-4"){
+    sh'''
+      rm -rf "${WORKSPACE}"/*
+    '''
+  }
+}
+
+node("sf2-5"){
+  stage("Clone repo sf2-5"){
+    checkout scm
+  }
+  stage("Compile helloworld.c sf2-5"){
+    sh'''#!/bin/bash
+      gcc ./helloworld.c -o helloworld.o
+    '''
+  }
+  stage("Run helloworld.o"){
+    sh'''#!/bin/bash
+      ./helloworld.o
+    '''
+  }
+  stage("Clean Workspace sf2-5"){
     sh'''
       rm -rf "${WORKSPACE}"/*
     '''
