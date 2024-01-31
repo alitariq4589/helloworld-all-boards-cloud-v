@@ -1,4 +1,4 @@
-node {
+node ('none') {
     stage('Build for PR') {
         // when {
         //     branch 'PR-*'
