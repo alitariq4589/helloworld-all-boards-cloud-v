@@ -198,9 +198,9 @@ pipeline {
     agent none
     stages {
         stage('PR branches') {
-            // when {
-            //     branch 'PR-*'
-            // }
+            when {
+                branch 'PR-*'
+            }
             stages {
                 stage('J-VF1-1')  {
                     agent {
