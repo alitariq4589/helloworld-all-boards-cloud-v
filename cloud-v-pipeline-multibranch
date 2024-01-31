@@ -208,19 +208,25 @@ pipeline {
                     }
                     stages {
                         stage('Compile helloworld.c J-VF1-1') {
-                            sh'''#!/bin/bash
-                                gcc ./helloworld.c -o helloworld.o
-                            '''
+                            steps {
+                                sh'''#!/bin/bash
+                                    gcc ./helloworld.c -o helloworld.o
+                                '''
+                            }
                         }
                         stage('Run helloworld.o') {
-                            sh'''#!/bin/bash
-                            ./helloworld.o
-                        '''
+                            steps {
+                                sh'''#!/bin/bash
+                                    ./helloworld.o
+                                '''
+                            }
                         }
                         stage('Clean Workspace J-VF1-1') {
-                            sh'''
-                            rm -rf "${WORKSPACE}"/*
-                        '''
+                            steps {
+                                sh'''
+                                    rm -rf "${WORKSPACE}"/*
+                                '''
+                            }
                         }
                     }
                 }
