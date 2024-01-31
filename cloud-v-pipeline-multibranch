@@ -1,13 +1,17 @@
-node ('none') {
-    stage('Build for PR') {
+pipeline {
+    agent none
+    when {
+            branch 'PR-*'
+    }
+    stages {
         // when {
         //     branch 'PR-*'
         // }
-        if (env.BRANCH_NAME == 'PR-*') {
-            node('J-VF1-1') {
-                stage('Clone repo J-VF1-1') {
-                    checkout scm
-                }
+        // if (env.BRANCH_NAME == 'PR-*') {
+        //     node('J-VF1-1') {
+        //         stage('Clone repo J-VF1-1') {
+        //             checkout scm
+        //         }
                 stage('Compile helloworld.c J-VF1-1') {
                     sh'''#!/bin/bash
       gcc ./helloworld.c -o helloworld.o
@@ -193,5 +197,3 @@ node ('none') {
                 }
             }
         }
-    }
-}
