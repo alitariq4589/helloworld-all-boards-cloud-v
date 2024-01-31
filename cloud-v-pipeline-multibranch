@@ -197,16 +197,23 @@
 pipeline {
     agent none
     stages {
-        stage('J-VF1-1')  {
-            agent {
-                label 'J-VF1-1'
+        stage('PR branches') {
+            when {
+                branch "PR-*"
             }
             stages {
-                stage('Hello World') {
-                    steps {
-                        sh'''
+                stage('J-VF1-1')  {
+                    agent {
+                        label 'J-VF1-1'
+                    }
+                    stages {
+                        stage('Hello World') {
+                            steps {
+                                sh'''
                     echo -e "Hello World"
                 '''
+                            }
+                        }
                     }
                 }
             }
