@@ -197,15 +197,17 @@
 pipeline {
     agent none
     stages {
-        stage ('J-VF1-1')  {
+        stage('J-VF1-1')  {
             agent {
                 label 'J-VF1-1'
             }
-            stage('Hello World') {
-                steps {
-                    sh'''
+            stages {
+                stage('Hello World') {
+                    steps {
+                        sh'''
                     echo -e "Hello World"
                 '''
+                    }
                 }
             }
         }
