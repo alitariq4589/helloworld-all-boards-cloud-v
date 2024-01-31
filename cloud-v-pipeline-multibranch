@@ -1,0 +1,193 @@
+{
+    when {
+        branch 'PR-*'
+    }
+    node('J-VF1-1') {
+            stage('Clone repo J-VF1-1') {
+                checkout scm
+            }
+            stage('Compile helloworld.c J-VF1-1') {
+                sh'''#!/bin/bash
+      gcc ./helloworld.c -o helloworld.o
+    '''
+            }
+            stage('Run helloworld.o') {
+                sh'''#!/bin/bash
+      ./helloworld.o
+    '''
+            }
+            stage('Clean Workspace J-VF1-1') {
+                sh'''
+      rm -rf "${WORKSPACE}"/*
+    '''
+            }
+    }
+
+    node('J-VF1-2') {
+            stage('Clone repo J-VF1-2') {
+                checkout scm
+            }
+            stage('Compile helloworld.c J-VF1-2') {
+                sh'''#!/bin/bash
+      gcc ./helloworld.c -o helloworld.o
+    '''
+            }
+            stage('Run helloworld.o') {
+                sh'''#!/bin/bash
+      ./helloworld.o
+    '''
+            }
+            stage('Clean Workspace J-VF1-2') {
+                sh'''
+      rm -rf "${WORKSPACE}"/*
+    '''
+            }
+    }
+
+    node('J-VF1-3') {
+            stage('Clone repo J-VF1-3') {
+                checkout scm
+            }
+            stage('Compile helloworld.c J-VF1-3') {
+                sh'''#!/bin/bash
+      gcc ./helloworld.c -o helloworld.o
+    '''
+            }
+            stage('Run helloworld.o') {
+                sh'''#!/bin/bash
+      ./helloworld.o
+    '''
+            }
+            stage('Clean Workspace J-VF1-3') {
+                sh'''
+      rm -rf "${WORKSPACE}"/*
+    '''
+            }
+    }
+
+    node('J-VF2-1') {
+            stage('Clone repo J-VF2-1') {
+                checkout scm
+            }
+            stage('Compile helloworld.c J-VF2-1') {
+                sh'''#!/bin/bash
+      gcc ./helloworld.c -o helloworld.o
+    '''
+            }
+            stage('Run helloworld.o') {
+                sh'''#!/bin/bash
+      ./helloworld.o
+    '''
+            }
+            stage('Clean Workspace J-VF2-1') {
+                sh'''
+      rm -rf "${WORKSPACE}"/*
+    '''
+            }
+    }
+
+    node('J-VF2-2') {
+            stage('Clone repo J-VF2-2') {
+                checkout scm
+            }
+            stage('Compile helloworld.c J-VF2-2') {
+                sh'''#!/bin/bash
+      gcc ./helloworld.c -o helloworld.o
+    '''
+            }
+            stage('Run helloworld.o') {
+                sh'''#!/bin/bash
+      ./helloworld.o
+    '''
+            }
+            stage('Clean Workspace J-VF2-2') {
+                sh'''
+      rm -rf "${WORKSPACE}"/*
+    '''
+            }
+    }
+
+    node('J-VF2-3') {
+            stage('Clone repo J-VF2-3') {
+                checkout scm
+            }
+            stage('Compile helloworld.c J-VF2-3') {
+                sh'''#!/bin/bash
+      gcc ./helloworld.c -o helloworld.o
+    '''
+            }
+            stage('Run helloworld.o') {
+                sh'''#!/bin/bash
+      ./helloworld.o
+    '''
+            }
+            stage('Clean Workspace J-VF2-3') {
+                sh'''
+      rm -rf "${WORKSPACE}"/*
+    '''
+            }
+    }
+
+    node('J-VF2-4') {
+            stage('Clone repo J-VF2-4') {
+                checkout scm
+            }
+            stage('Compile helloworld.c J-VF2-4') {
+                sh'''#!/bin/bash
+      gcc ./helloworld.c -o helloworld.o
+    '''
+            }
+            stage('Run helloworld.o') {
+                sh'''#!/bin/bash
+      ./helloworld.o
+    '''
+            }
+            stage('Clean Workspace J-VF2-4') {
+                sh'''
+      rm -rf "${WORKSPACE}"/*
+    '''
+            }
+    }
+
+    node('J-VF2-5') {
+            stage('Clone repo J-VF2-5') {
+                checkout scm
+            }
+            stage('Compile helloworld.c J-VF2-5') {
+                sh'''#!/bin/bash
+      gcc ./helloworld.c -o helloworld.o
+    '''
+            }
+            stage('Run helloworld.o') {
+                sh'''#!/bin/bash
+      ./helloworld.o
+    '''
+            }
+            stage('Clean Workspace J-VF2-5') {
+                sh'''
+      rm -rf "${WORKSPACE}"/*
+    '''
+            }
+    }
+
+    node('J-HF-1') {
+            stage('Clone repo J-HF-1') {
+                checkout scm
+            }
+            stage('Compile helloworld.c J-HF-1') {
+                sh'''#!/bin/bash
+      gcc ./helloworld.c -o helloworld.o
+    '''
+            }
+            stage('Run helloworld.o') {
+                sh'''#!/bin/bash
+      ./helloworld.o
+    '''
+            }
+            stage('Clean Workspace J-HF-1') {
+                sh'''
+      rm -rf "${WORKSPACE}"/*
+    '''
+            }
+    }
+}
