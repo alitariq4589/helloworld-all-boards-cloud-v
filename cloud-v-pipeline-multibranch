@@ -194,17 +194,19 @@
 //             }
 //         }
 
-pipeline{
+pipeline {
     agent none
     stages {
-        agent {
-            label "J-VF1-1"
-        }
-        stage ('Building on J-VF1-1'){
-            steps{
-                sh'''
+        stage ('J-VF1-1')  {
+            agent {
+                label 'J-VF1-1'
+            }
+            stage('Hello World') {
+                steps {
+                    sh'''
                     echo -e "Hello World"
                 '''
+                }
             }
         }
     }
