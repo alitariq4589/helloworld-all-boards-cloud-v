@@ -1,18 +1,12 @@
-name: Dockerized Job
-
-on:
-  push:
-    branches: [ main ]
-
 jobs:
   build:
     runs-on: self-hosted
     container:
       image: ubuntu:22.04
     steps:
-      - uses: actions/checkout@v3
-      - name: Show container info
+      - name: Install missing libs
         run: |
-          echo "Running inside Docker"
-          cat /etc/os-release
-          uname -a
+          apt update && apt install -y libatomic1 ca-certificates curl
+      - uses: actions/checkout@v3
+      - name: Test command
+        run: node -v
