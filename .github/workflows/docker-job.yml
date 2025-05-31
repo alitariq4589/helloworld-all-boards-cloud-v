@@ -1,4 +1,4 @@
-name: Dockerized Job
+name: Dockerized Job on riscv64
 
 on:
   push:
@@ -10,12 +10,16 @@ jobs:
   build:
     runs-on: self-hosted
     container:
-      image: node:20
+      image: riscv64/ubuntu:22.04
     steps:
       - uses: actions/checkout@v3
 
+      - name: Install node (for riscv64)
+        run: |
+          apt-get update
+          apt-get install -y curl ca-certificates
+          curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
+          apt-get install -y nodejs
+
       - name: Show node version
         run: node -v
-
-      - name: List current directory files
-        run: ls -la
