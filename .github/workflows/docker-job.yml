@@ -1,12 +1,21 @@
+name: Dockerized Job
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
 jobs:
   build:
     runs-on: self-hosted
     container:
-      image: ubuntu:22.04
+      image: node:20
     steps:
-      - name: Install missing libs
-        run: |
-          apt update && apt install -y libatomic1 ca-certificates curl
       - uses: actions/checkout@v3
-      - name: Test command
+
+      - name: Show node version
         run: node -v
+
+      - name: List current directory files
+        run: ls -la
