@@ -9,8 +9,6 @@ on:
 jobs:
   apt-update:
     runs-on: self-hosted
-    container:
-      image: riscv64/debian:trixie
     steps:
       - name: Update package index
         run: sudo apt update
